@@ -42,8 +42,12 @@ public class ContactService {
         return contactRepo.save(contact);
     }
 
-    public void deleteContact(Contact contact){
-        // Assignment
+    public String deleteContactById(String id){
+       if (contactRepo.existsById(id)){
+           contactRepo.deleteById((id));
+           return "Entity with " + id + " deleted successfully";
+       }
+       return "Entity with ID " + id + " not found";
     }
 
 
