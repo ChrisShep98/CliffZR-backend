@@ -23,8 +23,7 @@ public class BoulderingGrade {
     @OneToOne
     @JoinColumn(name = "user_id")
     private User user;
-//    @OneToOne(mappedBy = "user")
-//    private User user;
+
 }
 
 

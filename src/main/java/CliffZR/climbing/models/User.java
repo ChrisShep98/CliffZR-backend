@@ -35,9 +35,7 @@ public class User {
     @JsonManagedReference
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private BoulderingGrade boulderingGrade;
-//@OneToOne(cascade = CascadeType.ALL)
-//@JoinColumn(name = "boulderingGrade_id", referencedColumnName = "id")
-//private BoulderingGrade boulderingGrade;
+
 
     @PrePersist
     protected void onCreate(){
