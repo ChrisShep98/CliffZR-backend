@@ -18,10 +18,12 @@ public class BoulderingGrade {
     private String id;
     public String title;
     public String image;
-    public boolean status;
+    public boolean status = false;
     @JsonBackReference
-    @OneToOne
-    @JoinColumn(name = "user_id")
+    @ManyToOne
+//    @JoinColumn(name = "user_id")
+    // above was the initial way of keying specific boulderingRoutes to a user but threw "key already exists" error so going to keep below code unless problems arise from it
+    @JoinColumn(name = "key_of_user")
     private User user;
 
 }

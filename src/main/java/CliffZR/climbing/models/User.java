@@ -33,8 +33,8 @@ public class User {
     @Column(name = "created_at")
     private Date createdAt;
     @JsonManagedReference
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
-    private BoulderingGrade boulderingGrade;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<BoulderingGrade> boulderingGrade;
 
 
     @PrePersist
