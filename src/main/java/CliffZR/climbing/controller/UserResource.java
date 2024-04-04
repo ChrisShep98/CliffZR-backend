@@ -39,10 +39,17 @@ public class UserResource {
         return ResponseEntity.ok(user);
     }
 
-//    @GetMapping("/login")
-//    public ResponseEntity<User> getContact(@PathVariable(value = "id") String id) {
-//        return ResponseEntity.ok().body(userService.getContact(id));
-//    }
+    @GetMapping("/{username}")
+    public ResponseEntity<List<BoulderingGrade>> getUser(@PathVariable(value = "username") String username) {
+        return ResponseEntity.ok().body(userService.getUsersBoulderingGrades(username));
+    }
+
+
+    // some form of this will be useful later for searching users
+    @GetMapping
+    public ResponseEntity<List<User>> getAllUsers() {
+        return ResponseEntity.ok().body(userService.getAllUsers());
+    }
 
 
 
